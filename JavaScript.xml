@@ -1,0 +1,39 @@
+<templateSet group="JavaScript">
+  <template name="fu" value="function($PARAM$) {&#10;  $END$&#10;}" description="Inserts function expression" toReformat="true" toShortenFQNames="true">
+    <variable name="PARAM" expression="" defaultValue="&quot;&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JS_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="f" value="($PARAM$) =&gt; {&#10;  $END$&#10;}" description="fast function" toReformat="true" toShortenFQNames="true">
+    <variable name="PARAM" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="c" value="console.log($PARAM$);$END$" description="Console.log" toReformat="true" toShortenFQNames="true">
+    <variable name="PARAM" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="rclass" value="export default class extends React.Component {&#10;    render() {&#10;        return (&#10;            &lt;div&gt;$END$&lt;/div&gt;&#10;        )&#10;    }&#10;}" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JSX_HTML" value="true" />
+    </context>
+  </template>
+  <template name="ir" value="import React from 'react';" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JSX_HTML" value="true" />
+    </context>
+  </template>
+  <template name="mcont" value="import $COMPONENT$ from '../components/$COMPONENT_FILENAME$.jsx'&#10;import {useDeps, composeWithTracker, composeAll} from 'mantra-core';&#10;&#10;export const composer = ({context, clearErrors}, onData) =&gt; {&#10;  const {LocalState} = context();&#10;  const error = LocalState.get('ERROR');&#10;  onData(null, {error});&#10;&#10;  return clearErrors;&#10;};&#10;&#10;export const depsMapper = (context, actions) =&gt; ({&#10;  do: actions.todos.do,&#10;  context: () =&gt; context&#10;});&#10;&#10;export default composeAll(&#10;  composeWithTracker(composer),&#10;  useDeps(depsMapper)&#10;)($COMPONENT$);&#10;" description="Mantra container" toReformat="true" toShortenFQNames="true">
+    <variable name="COMPONENT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="COMPONENT_FILENAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JSX_HTML" value="false" />
+    </context>
+  </template>
+</templateSet>

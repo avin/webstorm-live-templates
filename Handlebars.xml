@@ -1,0 +1,8 @@
+<templateSet group="Handlebars">
+  <template name="t" value="&lt;template name=&quot;$PARAM$&quot;&gt;&#10;  $END$&#10;&lt;/template&gt;" description="template" toReformat="true" toShortenFQNames="true">
+    <variable name="PARAM" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_EXPRESSION" value="true" />
+    </context>
+  </template>
+</templateSet>
