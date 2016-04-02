@@ -11,7 +11,7 @@
       <option name="JS_EXPRESSION" value="true" />
     </context>
   </template>
-  <template name="c" value="console.log($PARAM$);$END$" description="Console.log" toReformat="true" toShortenFQNames="true">
+  <template name="c" value="const $PARAM$" description="const" toReformat="true" toShortenFQNames="true">
     <variable name="PARAM" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JS_EXPRESSION" value="true" />
@@ -34,6 +34,35 @@
       <option name="JAVA_SCRIPT" value="true" />
       <option name="JS_EXPRESSION" value="true" />
       <option name="JSX_HTML" value="false" />
+    </context>
+  </template>
+  <template name="re" value="const $NAME$ = (state = [], action) =&gt; {&#10;    switch (action.type) {&#10;        case '':&#10;        {&#10;            $END$&#10;            return state;            &#10;        }&#10;        default:&#10;            return state&#10;    }&#10;};" description="reducer" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JSX_HTML" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="d" value="describe('$first$', () =&gt; {&#10;    $end$&#10;});" description="describe" toReformat="false" toShortenFQNames="true">
+    <variable name="first" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="end" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JSX_HTML" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="it" value="it('$start$', () =&gt; {&#10;    $end$ &#10;});" description="it" toReformat="false" toShortenFQNames="true">
+    <variable name="start" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="end" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JSX_HTML" value="true" />
+      <option name="JS_STATEMENT" value="true" />
     </context>
   </template>
 </templateSet>
